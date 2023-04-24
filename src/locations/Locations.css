@@ -1,0 +1,13 @@
+.location:nth-of-type(even){
+    background-color: lightslategray;
+    width: 50rem;
+}
+.location:nth-of-type(odd){
+    background-color: whitesmoke;
+    width: 50rem;
+}
+
+.location{
+    padding: 1rem;
+    font-weight: 500;
+}
