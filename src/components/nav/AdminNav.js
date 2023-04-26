@@ -11,6 +11,11 @@ export const AdminNav = () => {
                     My Account
                 </li>
             </Link>
+            <Link className="navbar__item" to="/orders">
+                <li className="navbar__linkactive">
+                    Orders
+                </li>
+            </Link>
             
             <li className="navbar__item navbar__logout">
                 <Link className="navbar__link" to="" onClick={() => {

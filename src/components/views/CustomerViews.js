@@ -1,21 +1,27 @@
 import { Outlet, Route, Routes } from "react-router-dom"
-import { LocationsList } from "../../locations/Locations"
+import { CustomerLocationsList } from "../../locations/CustomerLocations"
+import { PurchaseForm } from "../../purchases/PurchaseOrderForm"
+import { MyOrders } from "../../purchases/MyOrders"
+import { PurchaseEdit } from "../../purchases/PurchaseEdit"
 
 export const CustomerViews = () => {
-		return (
-			<Routes>
-				<Route path="/" element={
-					<>
-						<h1>Mirat</h1>
-						<h3>Take the dive!</h3>
-	
-						<Outlet />
-					</>
-				}>
+	return (
+		<Routes>
+			<Route path="/" element={
+				<>
+					<h1>Mirat</h1>
+					<h2>Take the Dive!</h2>
 
-					<Route path="locations" element={ <LocationsList /> } />
+					<Outlet />
+				</>
+			}>
 
-				</Route>
-			</Routes>
-		)
-	}
+				<Route path="myAccount" element={<CustomerLocationsList />} />
+				<Route path="purchases/create" element={<PurchaseForm />} />
+				<Route path="orders" element={<MyOrders />} />
+				<Route path="purchases/:purchaseId/edit" element={<PurchaseEdit />} />
+
+			</Route>
+		</Routes>
+	)
+}
