@@ -1,5 +1,5 @@
 import { Outlet, Route, Routes } from "react-router-dom"
-import { LocationsList } from "../../locations/Locations"
+import { AdminLocationsList } from "../../locations/AdminLocations"
 
 export const AdminViews = () => {
 		return (
@@ -7,13 +7,13 @@ export const AdminViews = () => {
 				<Route path="/" element={
 					<>
 						<h1>Mirat</h1>
-						<h3>Take the Dive!</h3>
+						<h2>Take the Dive!</h2>
 	
 						<Outlet />
 					</>
 				}>
 	
-					<Route path="myAccount" element={ <LocationsList /> } />
+					<Route path="myAccount" element={ <AdminLocationsList /> } />
 
 				</Route>
 			</Routes>

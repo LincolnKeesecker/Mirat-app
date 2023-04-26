@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./Locations.css"
 
 
-export const LocationsList = () => {
+export const AdminLocationsList = () => {
     const [managedLocations, setManagedLocations] = useState([]);
 
     const localMiratUser = localStorage.getItem("mirat_user")

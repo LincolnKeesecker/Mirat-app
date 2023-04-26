@@ -70,6 +70,12 @@ export const Register = (props) => {
                         placeholder="Email address" required />
                 </fieldset>
                 <fieldset>
+                    <label htmlFor="password"> Password </label>
+                    <input onChange={updateUser}
+                        type="text" id="password" className="form-control"
+                        placeholder="Password" required />
+                </fieldset>
+                <fieldset>
                     <input onChange={(evt) => {
                         const copy = {...user}
                         copy.isStaff = evt.target.checked
