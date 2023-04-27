@@ -3,6 +3,7 @@ import { CustomerLocationsList } from "../../locations/CustomerLocations"
 import { PurchaseForm } from "../../purchases/PurchaseOrderForm"
 import { MyOrders } from "../../purchases/MyOrders"
 import { PurchaseEdit } from "../../purchases/PurchaseEdit"
+import { Customer } from "../customers/Customers"
 
 export const CustomerViews = () => {
 	return (
@@ -16,10 +17,11 @@ export const CustomerViews = () => {
 				</>
 			}>
 
-				<Route path="myAccount" element={<CustomerLocationsList />} />
+				<Route path="home" element={<CustomerLocationsList />} />
 				<Route path="purchases/create" element={<PurchaseForm />} />
 				<Route path="orders" element={<MyOrders />} />
 				<Route path="purchases/:purchaseId/edit" element={<PurchaseEdit />} />
+				<Route path="myAccount" element={<Customer />} />
 
 			</Route>
 		</Routes>

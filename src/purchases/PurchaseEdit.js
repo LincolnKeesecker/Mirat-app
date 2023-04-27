@@ -41,11 +41,10 @@ export const PurchaseEdit = () => {
         <div>
             <div className="form-group">
                 <label htmlFor="name"># of Cases Ordered</label>
-                <input type="input"
+                <input type="number"
                     value={purchase.quantityPurchased}
                     onChange={
                         (evt) => {
-                            // TODO: Update state with a modified copy
                             const copy = { ...purchase }
                             copy.quantityPurchased = parseInt(evt.target.value)
                             assignPurchase(copy)
