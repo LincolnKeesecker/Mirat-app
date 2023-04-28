@@ -23,7 +23,7 @@ export const Customer = ({id, fullName, email, password}) => {
 
     useEffect(
         () => {
-            const myAccount = customers.filter((customer) => customer.userId === miratUserObject.id)[0]
+            const myAccount = customers.find((customer) => customer.userId === miratUserObject.id)
             setSingleCustomer(myAccount)
         },
         [customers]
@@ -35,6 +35,6 @@ export const Customer = ({id, fullName, email, password}) => {
             <div>Email : {singleCustomer?.user?.email}</div>
             <div>Password: {singleCustomer?.user?.password}</div>
             
-        <button onClick={() => navigate("/myAccount")}>Update Account info</button>
+        <button onClick={() => navigate(`/myAccount/${singleCustomer?.user?.id}/edit`)}>Update Account info</button>
     </>
 }
