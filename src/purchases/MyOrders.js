@@ -14,10 +14,10 @@ export const MyOrders = () => {
 
     const getAllOrders = () => {
         fetch(`http://localhost:8088/purchases?_expand=customer&_expand=product`)
-        .then(response => response.json())
-        .then((ordersArray) => {
-            setCustomerOrders(ordersArray)
-        })
+            .then(response => response.json())
+            .then((ordersArray) => {
+                setCustomerOrders(ordersArray)
+            })
     }
 
     useEffect(
@@ -36,9 +36,9 @@ export const MyOrders = () => {
                 fetch(`http://localhost:8088/purchases/${order.id}`, {
                     method: "DELETE"
                 })
-                .then(() => {
-                    getAllOrders()
-                })
+                    .then(() => {
+                        getAllOrders()
+                    })
             }} className="order__delete">Delete Order</button>
         } else {
             return ""
@@ -50,6 +50,7 @@ export const MyOrders = () => {
         {filteredOrders.map((order) =>
             <section className="order" key={`order--${order.id}`}>
                 <div>
+                    <div>Order Number # {order.id}</div>
                     <div># {order.quantityPurchased} cases ordered</div>
                     <div>Size: {order?.product?.name}</div>
                 </div>

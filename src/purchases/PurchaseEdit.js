@@ -38,6 +38,8 @@ export const PurchaseEdit = () => {
         <h3 className="ticketForm__title">Purchase Orders</h3>
         
         <fieldset>
+        <div>Order Number # {purchase.id}</div>
+
         <div>
             <div className="form-group">
                 <label htmlFor="name"># of Cases Ordered</label>

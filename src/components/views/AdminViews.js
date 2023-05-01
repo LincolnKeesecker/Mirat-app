@@ -1,5 +1,8 @@
 import { Outlet, Route, Routes } from "react-router-dom"
 import { AdminLocationsList } from "../../locations/AdminLocations"
+import { OrdersList } from "../../purchases/OrdersList"
+import { PurchaseEdit } from "../../purchases/PurchaseEdit"
+import { PurchaseForm } from "../../purchases/PurchaseOrderForm"
 
 export const AdminViews = () => {
 		return (
@@ -13,7 +16,9 @@ export const AdminViews = () => {
 					</>
 				}>
 	
-					<Route path="myAccount" element={ <AdminLocationsList /> } />
+					<Route path="home" element={ <AdminLocationsList /> } />
+					<Route path="orders" element={ <OrdersList /> } />
+					<Route path="purchases/:purchaseId/edit" element={<PurchaseEdit />} />
 
 				</Route>
 			</Routes>

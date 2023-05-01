@@ -54,7 +54,7 @@ export const PurchaseForm = () => {
             <h2 className="newPurchase__title">New Purchase Order</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="customerId">Acct No. {userLocations.accountNumber}</label>
+                    <label htmlFor="customerId">Acct No. {userLocations?.accountNumber}</label>
                 </div>
             </fieldset>
             <fieldset>
