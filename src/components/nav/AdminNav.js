@@ -6,9 +6,9 @@ export const AdminNav = () => {
 
     return (
         <ul className="navbar">
-            <Link className="navbar__item" to="/myAccount">
+            <Link className="navbar__item" to="/home">
                 <li className="navbar__linkactive">
-                    My Account
+                    Home
                 </li>
             </Link>
             <Link className="navbar__item" to="/orders">
