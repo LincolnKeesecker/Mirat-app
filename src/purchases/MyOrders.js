@@ -11,24 +11,39 @@ export const MyOrders = () => {
 
     const navigate = useNavigate()
 
-    useEffect(
-        () => {
-            fetch(`http://localhost:8088/purchases?_expand=customer&_expand=product`)
-                .then(response => response.json())
-                .then((ordersArray) => {
-                    setCustomerOrders(ordersArray)
-                })
-        },
-        []
-    )
+
+    const getAllOrders = () => {
+        fetch(`http://localhost:8088/purchases?_expand=customer&_expand=product`)
+        .then(response => response.json())
+        .then((ordersArray) => {
+            setCustomerOrders(ordersArray)
+        })
+    }
 
     useEffect(
         () => {
+            getAllOrders()
             const myOrders = customerOrders.filter((order) => order.customerId === miratUserObject.id)
             setFilteredOrders(myOrders)
         },
         [customerOrders]
     )
+
+
+    const deleteButton = (order) => {
+        if (!miratUserObject.staff) {
+            return <button onClick={() => {
+                fetch(`http://localhost:8088/purchases/${order.id}`, {
+                    method: "DELETE"
+                })
+                .then(() => {
+                    getAllOrders()
+                })
+            }} className="order__delete">Delete Order</button>
+        } else {
+            return ""
+        }
+    }
 
     return <>
         <h3>My Orders </h3>
@@ -38,7 +53,8 @@ export const MyOrders = () => {
                     <div># {order.quantityPurchased} cases ordered</div>
                     <div>Size: {order?.product?.name}</div>
                 </div>
-                <button onClick={() => navigate(`/purchases/${order.id}/edit`)}>Edit Order</button>
+                <button onClick={() => navigate(`/purchases/${order.id}/edit`)} className="order__edit">Edit Order</button>
+                {deleteButton(order)}
             </section>
         )}
 
