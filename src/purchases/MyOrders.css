@@ -21,11 +21,16 @@
     font-size: 1.2em;
 }
 
-.order__edit {
-    margin-left: auto;
+.purchase__edit {
+    margin: 0.5em 0;
 }
 
 .order__delete {
     margin-right: auto;
-    background-color: crimson;
+    background-color: rgb(217, 41, 76);
+}
+
+.purchase__approve {
+    margin-right: auto;
+    background-color: rgb(60, 206, 60);
 }

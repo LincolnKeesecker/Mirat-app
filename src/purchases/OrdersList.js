@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./MyOrders.css"
 
@@ -17,6 +17,13 @@ export const OrdersList = () => {
                 setPurchases(purchasesArray)
             })
     }
+    
+    useEffect(
+        () =>{
+            getAllOrders()
+        },
+        []
+    )
 
     const deleteButton = (order) => {
         if (miratUserObject.staff) {
@@ -33,18 +40,50 @@ export const OrdersList = () => {
         }
     }
 
+    const canApprove = (order) => {
+        if (order.datePurchased === "") {
+            return <button onClick={() => {approveButton(order)}} className="purchase__approve">Approve</button>
+        } else {
+            return ""
+        }
+    }
+
+    const approveButton = (order) => {
+        const date = new Date()
+        const copy = {
+            id: order.id,
+            customerId: order.customerId,
+            productId: order.productId,
+            quantityPurchased: order.quantityPurchased,
+            datePurchased: date.toDateString()
+        }
+
+        return fetch(`http://localhost:8088/purchases/${order.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(copy)
+        })
+            .then(response=>response.json())
+            .then(getAllOrders())
+    }
+
     return <>
         <h3>All Orders</h3>
-        {getAllOrders(purchases)}
         {purchases.map((purchase) =>
             <section className="purchase" key={`purchase--${purchase.id}`}>
                 <div>
                     <div>Order Number # {purchase.id}</div>
                     <div># {purchase.quantityPurchased} cases purchased</div>
                     <div>Size: {purchase?.product?.name}</div>
+                    {purchase?.datePurchased ? <div>Date Purchased: {purchase?.datePurchased}</div> : <></>}
                 </div>
                 <button onClick={() => navigate(`/purchases/${purchase.id}/edit`)} className="purchase__edit">Edit Purchase</button>
-                {deleteButton(purchase)}
+                <div>
+                    {deleteButton(purchase)}
+                    {canApprove(purchase)}
+                </div>
             </section>
         )}
     </>

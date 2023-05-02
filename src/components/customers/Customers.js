@@ -30,7 +30,7 @@ export const Customer = ({id, fullName, email, password}) => {
     )
 
     return <>
-        <h3>My Orders </h3>
+        <h3>My Account </h3>
             <div>Name : {singleCustomer?.user?.fullName}</div>
             <div>Email : {singleCustomer?.user?.email}</div>
             <div>Password: {singleCustomer?.user?.password}</div>
