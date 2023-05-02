@@ -21,8 +21,14 @@ export const MyOrders = () => {
     }
 
     useEffect(
-        () => {
+        () =>{
             getAllOrders()
+        },
+        []
+    )
+
+    useEffect(
+        () => {
             const myOrders = customerOrders.filter((order) => order.customerId === miratUserObject.id)
             setFilteredOrders(myOrders)
         },
@@ -52,7 +58,8 @@ export const MyOrders = () => {
                 <div>
                     <div>Order Number # {order.id}</div>
                     <div># {order.quantityPurchased} cases ordered</div>
-                    <div>Size: {order?.product?.name}</div>
+                    <div>Name: {order?.product?.name}</div>
+                    <div>Size: {order?.product?.size}</div>
                 </div>
                 <button onClick={() => navigate(`/purchases/${order.id}/edit`)} className="order__edit">Edit Order</button>
                 {deleteButton(order)}

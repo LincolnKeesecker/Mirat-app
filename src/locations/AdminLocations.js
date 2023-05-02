@@ -3,20 +3,34 @@ import "./Locations.css"
 
 
 export const AdminLocationsList = () => {
-    const [managedLocations, setManagedLocations] = useState([]);
-
+    const [managedLocations, setManagedLocations] = useState([])
+    const [currentAdmin, setCurrentAdmin] = useState({})
     const localMiratUser = localStorage.getItem("mirat_user")
     const miratUserObject = JSON.parse(localMiratUser)
 
     useEffect(
         () =>{
-            fetch(`http://localhost:8088/managedLocations?_expand=location&adminId=${miratUserObject.id}`)
+            fetch(`http://localhost:8088/admins`)
+            .then(response => response.json())
+            .then((adminArray) => {
+                let user = adminArray.find((admin) => admin.userId === miratUserObject.id)
+                setCurrentAdmin(user)
+            })
+            
+        },
+        []
+        )
+        
+        useEffect(
+            () =>{
+            fetch(`http://localhost:8088/managedLocations?_expand=location&adminId=${currentAdmin.id}`)
             .then(response => response.json())
             .then((managedLocationsArray) => {
                 setManagedLocations(managedLocationsArray)
             })
+        
         },
-        []
+        [currentAdmin]
     )
 
     return <>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "./MyOrders.css"
 
 export const PurchaseForm = () => {
     const localMiratUser = localStorage.getItem("mirat_user")
@@ -10,9 +11,19 @@ export const PurchaseForm = () => {
         productId: 1,
         quantityPurchased: 0
     })
-
+    const [products, setProducts] = useState([])
     const [userLocations, setUserLocations] = useState([])
 
+    useEffect(
+        () =>{
+        fetch(`http://localhost:8088/products`)
+        .then(response => response.json())
+        .then((productArray) => {
+            setProducts(productArray)
+        })
+        },
+        []
+    )
 
     useEffect(
         () => {
@@ -74,6 +85,23 @@ export const PurchaseForm = () => {
                                 updateNewPurchase(copy)
                             }
                         } />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="type">Size: </label>
+                    <select
+                        value={newPurchase.productId}
+                        onChange={
+                            (evt) => {
+                                const copy = { ...newPurchase }
+                                copy.productId = parseInt(evt.target.value)
+                                updateNewPurchase(copy)
+                            }
+                        }>
+                        <option value={0}>Select a Size</option>
+                        {products.map((product) => <option key={product.id} value={product.id}>{product?.size}</option>)}
+                    </select>
                 </div>
             </fieldset>
 
