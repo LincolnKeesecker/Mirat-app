@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Mirat
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+Mirat is a way to streamline communications between Mirat as a distributor and customers that resell bottles of Mirat Rum. Users can create purchase orders and manage those orders with amounts and sizes of bottles ordered. Those orders are then approved or denied based on an employees interaction.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+1. Download and install the latest version of node.js from nodejs.org.
+2. Clone the repository to your local machine.
+3. Clone the companion JSON server repository to your local machine from [Mirat](https://github.com/LincolnKeesecker/mirat)
+4. Open a terminal window and navigate to the server directory.
+5. Run the server using the command 
+```bash
+json-server database.json -p 8088 -w
+```
+6. leave it running as long as the app is active. It can be closed with Ctrl+c.
+Open a second new terminal and navigate to the project directory.
+7. Install the dependencies by running the command
+```bash
+npm install
+```
+8. Start the app using the command 'npm start'
+9. A new browser window with the app will open. It can be closed with the following command in the terminal.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+Ctrl+c
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Using the App
 
-### `npm test`
+1. Run the app and server as directed in the previous section. Click "Create A New Account". Enter a name, email, and password and click register.
+2. Click the "Order" button at the top of the page
+3. Click the "New Purchase Order" button to create a new purchase order request
+4. Select the quantity and the size of bottle needed
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Contributing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Please make sure to update tests as appropriate.
