@@ -1,7 +1,8 @@
-import React, { useState } from "react"
+import React, { useState, Component } from "react"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
 import "./Login.css"
+
 
 export const Login = () => {
     const [email, set] = useState("")
@@ -27,13 +28,17 @@ export const Login = () => {
                     window.alert("Invalid login")
                 }
             })
-    }
+        
+            
+        }
 
     return (
         <main className="container--login">
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Mirat</h1>
+                    <h1 className="logo">
+                        <img src="/priLogo.jpg"/>
+                    </h1>
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
@@ -54,14 +59,14 @@ export const Login = () => {
                             required autoFocus />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <button className="signIn__button" type="submit">
                             Sign in
                         </button>
                     </fieldset>
-                </form>
-            </section>
             <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+                <Link className="link--register" to="/register">Create A New Account</Link>
+            </section>
+                </form>
             </section>
         </main>
     )

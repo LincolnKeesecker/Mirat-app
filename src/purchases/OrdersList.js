@@ -34,7 +34,7 @@ export const OrdersList = () => {
                     .then(() => {
                         getAllOrders()
                     })
-            }} className="order__delete">Delete Order</button>
+            }} className="order__delete">Delete</button>
         } else {
             return ""
         }
@@ -42,7 +42,7 @@ export const OrdersList = () => {
 
     const canApprove = (order) => {
         if (order.datePurchased === "") {
-            return <button onClick={() => {approveButton(order)}} className="purchase__approve">Approve</button>
+            return <button onClick={() => {approveButton(order)}} className="order__approve">Approve</button>
         } else {
             return ""
         }
@@ -72,15 +72,15 @@ export const OrdersList = () => {
     return <>
         <h3>All Orders</h3>
         {purchases.map((purchase) =>
-            <section className="purchase" key={`purchase--${purchase.id}`}>
-                <div>
+            <section className="order" key={`purchase--${purchase.id}`}>
+                <div className="order__info">
                     <div>Order Number # {purchase.id}</div>
                     <div># {purchase.quantityPurchased} cases purchased</div>
                     <div>Size: {purchase?.product?.name}</div>
                     {purchase?.datePurchased ? <div>Date Purchased: {purchase?.datePurchased}</div> : <></>}
                 </div>
-                <button onClick={() => navigate(`/purchases/${purchase.id}/edit`)} className="purchase__edit">Edit Purchase</button>
-                <div>
+                <button onClick={() => navigate(`/purchases/${purchase.id}/edit`)} className="order__edit">Edit Purchase</button>
+                <div className="adminButtons">
                     {deleteButton(purchase)}
                     {canApprove(purchase)}
                 </div>

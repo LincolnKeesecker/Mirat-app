@@ -60,9 +60,9 @@ export const PurchaseForm = () => {
                 navigate("/orders")
             })
     }
-    return (
+    return <>
+        <h3 className="newPurchase__title">New Purchase Order</h3>
         <form className="newPurchase">
-            <h2 className="newPurchase__title">New Purchase Order</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="customerId">Acct No. {userLocations?.accountNumber}</label>
@@ -75,8 +75,10 @@ export const PurchaseForm = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="quantityPurchased">Quantity</label>
-                    <input type="number"
+                    <label htmlFor="quantityPurchased">Quantity: </label>
+                    <input
+                        className="input_field"
+                        type="number"
                         value={newPurchase.quantityPurchased}
                         onChange={
                             (evt) => {
@@ -91,6 +93,7 @@ export const PurchaseForm = () => {
                 <div className="form-group">
                     <label htmlFor="type">Size: </label>
                     <select
+                        className="input_field"
                         value={newPurchase.productId}
                         onChange={
                             (evt) => {
@@ -107,9 +110,9 @@ export const PurchaseForm = () => {
 
             <button
                 onClick={(evt) => handleSaveButtonClick(evt)}
-                className="btn btn-primary">
+                className="btn_btn-primary">
                 Submit New Purchase Order
             </button>
         </form>
-    )
+    </>
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import "./Customers.css"
 
 export const CustomerEdit = () => {
     const {customerId} = useParams()
@@ -36,8 +37,9 @@ export const CustomerEdit = () => {
     }
 
 
-    return <form className="customer">
+    return <>
         <h3>Update Current Account Info</h3>
+        <form className="customer">
         <fieldset>
             <div>
                 <div className="form-group">
@@ -97,8 +99,9 @@ export const CustomerEdit = () => {
         </fieldset>
         <button
             onClick={(clickEvent) => handleSavebuttonClick(clickEvent)}
-            className="btn btn-primary">
+            className="btn_btn-primary">
                 Save Updated Info
         </button>
     </ form>
+    </>
 }

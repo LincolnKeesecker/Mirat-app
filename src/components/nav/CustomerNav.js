@@ -6,18 +6,18 @@ export const CustomerNav = () => {
 
     return (
         <ul className="navbar">
-            <Link className="navbar__item" to="/home">
-                <li className="navbar__linkactive">
+            <Link className="navbar__item navbar__home" to="/home">
+                <li className="navbar__linkactive navbar__home">
                     Home
                 </li>
             </Link>
-            <Link className="navbar__item" to="/orders">
-                <li className="navbar__linkactive">
+            <Link className="navbar__item navbar__orders" to="/orders">
+                <li className="navbar__linkactive navbar__orders">
                     Orders
                 </li>
             </Link>
-            <Link className="navbar__item" to="/myAccount">
-                <li className="navbar__linkactive">
+            <Link className="navbar__item navbar__myAccount" to="/myAccount">
+                <li className="navbar__linkactive navbar__myAccount">
                     My Account
                 </li>
             </Link>
@@ -25,7 +25,7 @@ export const CustomerNav = () => {
             <li className="navbar__item navbar__logout">
                 <Link className="navbar__link" to="" onClick={() => {
                     localStorage.removeItem("mirat_user")
-                    navigate("/", { replace: true })
+                    navigate("/", {replace: true })
                 }}>Logout</Link>
             </li>
         </ul>

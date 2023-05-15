@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import "./MyOrders.css"
 
 export const PurchaseEdit = () => {
     const [purchase, assignPurchase] = useState({})
@@ -46,8 +47,9 @@ export const PurchaseEdit = () => {
             })
     }
 
-    return <form className="purchaseForm">
+    return <>
         <h3 className="ticketForm__title">Purchase Orders</h3>
+        <form className="purchaseForm">
 
         <fieldset>
             <div>Order Number # {purchase.id}</div>
@@ -55,8 +57,9 @@ export const PurchaseEdit = () => {
 
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name"># of Cases Ordered</label>
+                    <label htmlFor="name"># of Cases Ordered: </label>
                     <input type="number"
+                        className="input_field_number"
                         value={purchase.quantityPurchased}
                         onChange={
                             (evt) => {
@@ -69,8 +72,9 @@ export const PurchaseEdit = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="type">Size: </label>
+                    <label htmlFor="type">Size of bottle: </label>
                     <select
+                        className="input_field"
                         value={purchase.productId}
                         onChange={
                             (evt) => {
@@ -87,9 +91,10 @@ export const PurchaseEdit = () => {
 
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-                className="btn btn-primary">
+                className="btn_btn-primary">
                 Save Edit
             </button>
     </fieldset>
     </form>
+    </>
 }

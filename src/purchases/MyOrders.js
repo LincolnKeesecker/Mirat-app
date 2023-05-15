@@ -45,7 +45,7 @@ export const MyOrders = () => {
                     .then(() => {
                         getAllOrders()
                     })
-            }} className="order__delete">Delete Order</button>
+            }} className="order__delete">Delete</button>
         } else {
             return ""
         }
@@ -55,17 +55,20 @@ export const MyOrders = () => {
         <h3>My Orders </h3>
         {filteredOrders.map((order) =>
             <section className="order" key={`order--${order.id}`}>
-                <div>
+                <div className="order__info">
                     <div>Order Number # {order.id}</div>
                     <div># {order.quantityPurchased} cases ordered</div>
                     <div>Name: {order?.product?.name}</div>
                     <div>Size: {order?.product?.size}</div>
                 </div>
                 <button onClick={() => navigate(`/purchases/${order.id}/edit`)} className="order__edit">Edit Order</button>
-                {deleteButton(order)}
+                <div className="adminButtons">
+                    {deleteButton(order)}
+                </div>
             </section>
         )}
-
-        <button onClick={() => navigate("/purchases/create")}>New Purchase Order</button>
+        <div className="newOrderButtonDiv">
+            <button className="newOrder__button" onClick={() => navigate("/purchases/create")}>New Purchase Order</button>
+        </div>
     </>
 }
