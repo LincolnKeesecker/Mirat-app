@@ -6,18 +6,18 @@ export const AdminNav = () => {
 
     return (
         <ul className="navbar">
-            <Link className="navbar__item" to="/home">
-                <li className="navbar__linkactive">
+            <Link className="navbar__item navbar__home" to="/home">
+                <li className="navbar__linkactive navbar__home">
                     Home
                 </li>
             </Link>
-            <Link className="navbar__item" to="/orders">
-                <li className="navbar__linkactive">
+            <Link className="navbar__item navbar__orders" to="/orders">
+                <li className="navbar__linkactive navbar__orders">
                     Orders
                 </li>
             </Link>
-            <Link className="navbar__item" to="/myAccount">
-                <li className="navbar__linkactive">
+            <Link className="navbar__item navbar__myAccount" to="/myAccount">
+                <li className="navbar__linkactive navbar__myAccount">
                     My Account
                 </li>
             </Link>

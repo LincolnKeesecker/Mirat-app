@@ -6,27 +6,37 @@
     flex-wrap: nowrap;
     justify-content: left;
     font-family: "Montserrat";
-    background-color: #464749;
-    margin: 0;
+    background-color: #6d6e71;
+    margin: 0 0;
+    padding-left: 0;
 }
 
 .navbar__item {
-    flex-basis: 20%;
+    color: white;
+    flex-basis: 250%;
     list-style-type: none;
     text-align: center;
     height: 3em;
     display: flex;
     align-items: center;
     justify-content: center;
+    float: left;
 }
 
 .navbar__item:hover{
     background-color: #52555e;
-    text-decoration: none
+    text-decoration: none;
+    transition-duration: 0.4s;
 }
-.navbar__item:last-child{
+
+.navbar__item:first-child:hover{
+    background-color: #B7965A;
+}
+
+.navbar__item:last-child:hover{
     background-color: #313338
 }
+
 .navbar__item:last-child .navbar__link:hover{
     color: red
 }
@@ -42,7 +52,25 @@
     text-decoration: none;
 }
 
+.navbar__home{
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar__myAccount {
+    float: right;
+}
+
+.navbar__orders {
+    float: right;
+}
 
 .navbar__link:visited{
+    color: white;
+}
+
+.navbar__item:visited{
     color: white;
 }

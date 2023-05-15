@@ -1,0 +1,61 @@
+.info__card {
+    background-color: #B7965A;
+    padding: 1em 0;
+    margin: 0.5em 0;
+    border: 1px outset rgb(247, 246, 246);
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+.update__button {
+    border: none;
+    border-radius: 8px;
+    color: white;
+    background-color: #555555;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+  }
+
+  .update__button:hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: black;
+  }
+
+  .admin {
+    background-color: #B7965A;
+    padding: 1em 0;
+    margin: 0.5em 0;
+    border: 1px outset rgb(247, 246, 246);
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bolder;
+  }
+
+  .btn_btn-primary {
+    border: none;
+    border-radius: 8px;
+    color: white;
+    background-color: #555555;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+  }
+
+  .btn_btn-primary:hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: black;
+  }

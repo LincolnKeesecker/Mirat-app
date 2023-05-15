@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "./Admin.css"
+
 
 export const Admin = ({id, fullName, email, password}) => {
     const [admins, setAdmin] = useState([])
@@ -31,10 +33,14 @@ export const Admin = ({id, fullName, email, password}) => {
 
     return <>
         <h3>My Account</h3>
-            <div>Name : {singleAdmin?.user?.fullName}</div>
-            <div>Email : {singleAdmin?.user?.email}</div>
-            <div>Password: {singleAdmin?.user?.password}</div>
 
-        <button onClick={() => navigate(`/myAccount/${singleAdmin?.user?.id}/edit`)}>Update Account info</button>
+            <section className="info__card">
+                <div>Name : {singleAdmin?.user?.fullName}</div>
+                <div>Email : {singleAdmin?.user?.email}</div>
+                <div>Password: {singleAdmin?.user?.password}</div>
+            </section>
+        <div className="updateButtonDiv">
+            <button className="update__button" onClick={() => navigate(`/myAccount/${singleAdmin?.user?.id}/edit`)}>Update Account info</button>
+        </div>
     </>
 } 

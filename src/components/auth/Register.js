@@ -54,8 +54,9 @@ export const Register = (props) => {
     }
 
     return (
-        <main style={{ textAlign: "center" }}>
-            <form className="form--login" onSubmit={handleRegister}>
+
+        <main className="container--register" style={{ textAlign: "center" }}>
+            <form className="form--register" onSubmit={handleRegister}>
                 <h1 className="h3 mb-3 font-weight-normal">Please Register for Mirat</h1>
                 <fieldset>
                     <label htmlFor="fullName"> Full Name </label>
@@ -83,9 +84,9 @@ export const Register = (props) => {
                     }}
                         type="checkbox" id="isStaff" />
                     <label htmlFor="email"> I am an employee </label>
-                </fieldset>
                 <fieldset>
-                    <button type="submit"> Register </button>
+                    <button className="register__button" type="submit"> Register </button>
+                </fieldset>
                 </fieldset>
             </form>
         </main>

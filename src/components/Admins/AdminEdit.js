@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import "./Admin.css"
 
 export const AdminEdit = () => {
     const {adminId} = useParams()
@@ -35,8 +36,9 @@ export const AdminEdit = () => {
             })
     }
 
-    return <form className="admin">
+    return <>
     <h3>Update Current Account Info</h3>
+    <form className="admin">
     <fieldset>
         <div>
             <div className="form-group">
@@ -96,8 +98,9 @@ export const AdminEdit = () => {
     </fieldset>
     <button
         onClick={(clickEvent) => handleSavebuttonClick(clickEvent)}
-        className="btn btn-primary">
+        className="btn_btn-primary">
             Save Updated Info
     </button>
 </ form>
+</>
 }

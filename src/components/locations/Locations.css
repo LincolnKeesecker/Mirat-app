@@ -1,0 +1,98 @@
+.location:nth-of-type(even){
+    background-color: #495057;
+    border: 1px solid rgb(247, 246, 246);
+    font-weight: bold;
+    width: 100%;
+    padding: 1em 0;
+}
+.location:nth-of-type(odd){
+    background-color: #B7965A;
+    border: 1px solid rgb(247, 246, 246);
+    font-weight: bold;
+    width: 100%;
+    padding: 1em 0;
+}
+
+h2{
+    color: #B7965A;
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    color: #B7965A;
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    background-color: #090809;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+.location{
+    padding: 0;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+}
+
+.locations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.mid_section {
+    display: flex;
+    justify-content: center;
+    background-color: #090809;
+}
+
+.tasting_image {
+    padding: 3em 3em;
+    margin: 0 2em;
+    width: 500px;
+    height: auto;
+}
+
+.text_mid_section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color: #090809;
+    padding: 0 3em;
+}
+
+.badge_image {
+    margin: 0 auto;
+    width: 15rem;
+    height: auto
+}
+
+.footer {
+    background-color: #495057;
+    border: 1px solid rgb(247, 246, 246);
+    font-weight: bold;
+    width: 100%;
+    padding: 1em 0;
+}
+
+.footer_text {
+    color: #090809;
+}
+
+.input_field {
+    width: 150px;
+}
